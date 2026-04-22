@@ -3,62 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wasike Photography | Visual Architect</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
+    <title>Wasike Photography | Visual Storyteller</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="index.html" class="brand">WASIKE<span>.</span></a>
-            <div class="nav-links">
-                <a href="portfolio.html">Portfolio</a>
-                <a href="about.html">Studio</a>
-                <a href="booking.html" class="contact-trigger">Contact</a>
+    <nav class="mutua-nav">
+        <div class="nav-content">
+            <a href="index.html" class="logo">WASIKE<span>.</span></a>
+            <div class="links">
+                <a href="portfolio.html">Works</a>
+                <a href="about.html">About</a>
+                <a href="booking.html" class="contact-link">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section class="fullscreen-hero">
-        <video autoplay muted loop playsinline class="hero-media">
+    <header class="fullscreen-hero">
+        <video autoplay muted loop playsinline class="hero-video">
             <source src="assets/videos/hero-video.mp4" type="video/mp4">
         </video>
-        <div class="hero-caption">
-            <span class="location">Nairobi, Kenya</span>
-            <h1>Capturing the <br><i>Unseen</i></h1>
+        <div class="hero-text">
+            <span class="location-tag">Nairobi, Kenya</span>
+            <h1>Documenting the <i>Soul</i> of Africa</h1>
         </div>
-    </section>
+    </header>
 
-    <section class="work-showcase">
-        <div class="work-item">
-            <img src="assets/images/sample1.jpg" alt="Commercial">
-            <div class="item-meta"><h3>Brand Identity</h3></div>
+    <section class="main-portfolio">
+        <div class="section-intro">
+            <h2>Latest Works</h2>
+            <p>From the streets of Nairobi to the heart of the landscape.</p>
         </div>
-        <div class="work-item">
-            <img src="assets/images/sample2.jpg" alt="Portrait">
-            <div class="item-meta"><h3>Human Essence</h3></div>
-        </div>
-        <div class="work-item">
-            <img src="assets/images/sample3.jpg" alt="Urban">
-            <div class="item-meta"><h3>City Soul</h3></div>
-        </div>
-    </section>
 
-    <section class="social-stream">
-        <div class="stream-header">
-            <h2>Live from @wasikephotography</h2>
-        </div>
-        <div class="juicer-wrapper">
-             <ul class="juicer-feed" data-feed-id="wasikephotography" data-per="4" data-columns="4">
+        <div class="juicer-container">
+            <ul class="juicer-feed" data-feed-id="wasikephotography" data-per="12" data-columns="3">
                 <h1 class="referral"><a href="https://www.juicer.io">Powered by Juicer</a></h1>
-             </ul>
-             <script type="text/javascript" src="https://www.juicer.io/embed/wasikephotography/embed-code.js" async defer></script>
+            </ul>
+            <script type="text/javascript" src="https://www.juicer.io/embed/wasikephotography/embed-code.js" async defer></script>
         </div>
     </section>
 
     <footer class="minimal-footer">
-        <p>&copy; 2026 Wasike Photography. Nairobi.</p>
+        <div class="footer-links">
+            <a href="https://instagram.com/wasikephotography">Instagram</a>
+            <a href="https://tiktok.com/@wasikephotography">TikTok</a>
+        </div>
+        <p>&copy; 2026 Wasike Photography. All Rights Reserved.</p>
     </footer>
 
     <script src="js/script.js"></script>

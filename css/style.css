@@ -1,37 +1,268 @@
+/* WASIKE PHOTOGRAPHY - MASTER STYLESHEET
+    Inspiration: Mutua Matheka & MediaJos (High-End Agency Aesthetic)
+*/
+
 :root {
-    --white: #ffffff;
     --black: #000000;
-    --grey: #1a1a1a;
-    --accent: #d4af37;
+    --white: #ffffff;
+    --gray-light: #f9f9f9;
+    --gray-border: #eeeeee;
+    --accent-gold: #d4af37;
+    --font-main: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--black); color: var(--white); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+/* 1. GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Nav */
-.main-nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 30px 50px; }
-.brand { font-weight: 700; font-size: 1.5rem; text-decoration: none; color: white; letter-spacing: -1px; }
-.brand span { color: var(--accent); }
-.nav-links a { text-decoration: none; color: white; margin-left: 40px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; }
+body {
+    background: var(--white);
+    color: var(--black);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-/* Hero */
-.fullscreen-hero { height: 100vh; width: 100%; position: relative; display: flex; align-items: flex-end; padding: 100px 50px; }
-.hero-media { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.5); }
-.hero-caption h1 { font-size: clamp(3rem, 10vw, 8rem); font-weight: 200; line-height: 1; text-transform: uppercase; }
-.hero-caption i { font-family: 'Playfair Display', serif; text-transform: lowercase; }
+/* 2. NAVIGATION (Dynamic Glassmorphism) */
+.mutua-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 40px 60px;
+    transition: var(--transition);
+}
 
-/* Showcase */
-.work-showcase { display: flex; flex-wrap: wrap; }
-.work-item { width: 33.33%; height: 80vh; position: relative; overflow: hidden; border: 0.5px solid var(--grey); }
-.work-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s cubic-bezier(0.19, 1, 0.22, 1); filter: grayscale(100%); }
-.work-item:hover img { transform: scale(1.05); filter: grayscale(0%); }
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+}
 
-/* Social Section */
-.social-stream { padding: 100px 50px; background: var(--black); }
-.stream-header h2 { font-size: 0.8rem; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 50px; text-align: center; opacity: 0.5; }
-.juicer-wrapper { max-width: 1600px; margin: 0 auto; }
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: white; /* Initial state over video */
+    letter-spacing: -1px;
+}
+
+.logo span { color: var(--accent-gold); }
+
+.links a {
+    text-decoration: none;
+    color: white; /* Initial state over video */
+    margin-left: 35px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.links a:hover { opacity: 1; color: var(--accent-gold); }
+
+/* 3. HERO SECTION (Full-Screen Immersive) */
+.fullscreen-hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    color: white;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
+    font-weight: 200;
+    line-height: 1.1;
+    max-width: 1000px;
+    text-transform: uppercase;
+}
+
+.hero-text i { font-family: var(--font-serif); font-weight: 400; }
+
+.location-tag {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--accent-gold);
+    margin-bottom: 25px;
+    display: block;
+}
+
+/* 4. MAIN GALLERY & SHOWCASE */
+.main-portfolio {
+    padding: 120px 60px;
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.section-intro h2 {
+    font-size: 0.75rem;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.4;
+}
+
+.section-intro p {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-style: italic;
+}
+
+.juicer-container {
+    max-width: 1600px;
+    margin: 0 auto;
+}
 
 /* Hide Juicer Branding */
 .juicer-feed .referral { display: none !important; }
 
-.minimal-footer { padding: 50px; text-align: center; opacity: 0.3; font-size: 0.7rem; letter-spacing: 2px; }
+/* 5. ABOUT PAGE (Editorial Split) */
+.about-hero-split {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+}
+
+.about-image {
+    flex: 1;
+    height: 100vh;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content {
+    flex: 1;
+    padding: 0 10%;
+}
+
+.about-content h2 {
+    font-size: 3.5rem;
+    font-weight: 200;
+    margin: 25px 0;
+    text-transform: uppercase;
+}
+
+.lead {
+    font-size: 1.6rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.signature {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin-top: 50px;
+    color: var(--accent-gold);
+}
+
+/* 6. BOOKING/CONTACT (Minimal Form) */
+.booking-minimal {
+    padding: 180px 20%;
+    text-align: center;
+}
+
+.minimal-form {
+    margin: 80px 0;
+    text-align: left;
+}
+
+.form-row {
+    display: flex;
+    gap: 40px;
+}
+
+.minimal-form input, 
+.minimal-form textarea {
+    width: 100%;
+    padding: 18px 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    background: transparent;
+    margin-bottom: 40px;
+    outline: none;
+    font-family: inherit;
+    transition: border-bottom 0.3s;
+}
+
+.minimal-form input:focus { border-bottom: 1px solid var(--black); }
+
+.send-btn {
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 18px 50px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.send-btn:hover { background: var(--accent-gold); }
+
+/* 7. FOOTER */
+.minimal-footer {
+    padding: 120px 60px;
+    text-align: center;
+    border-top: 1px solid var(--gray-border);
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--black);
+    margin: 0 25px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover { color: var(--accent-gold); }
+
+.minimal-footer p {
+    margin-top: 40px;
+    font-size: 0.6rem;
+    opacity: 0.4;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* 8. RESPONSIVE QUERIES */
+@media (max-width: 1024px) {
+    .mutua-nav { padding: 30px 40px; }
+    .about-hero-split { flex-direction: column; height: auto; }
+    .about-image { height: 60vh; width: 100%; }
+    .about-content { padding: 80px 40px; }
+    .booking-minimal { padding: 150px 40px; }
+    .form-row { flex-direction: column; gap: 0; }
+}
