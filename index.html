@@ -3,66 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wasike Photography | Afro-Cinematic Visuals</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;500&display=swap" rel="stylesheet">
+    <title>Wasike Photography | Visual Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&family=Playfair+Display:ital,wght@1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-    <nav class="luxury-nav">
-        <div class="logo">WASIKE<span>.</span></div>
-        <div class="nav-links">
-            <a href="portfolio.html">Works</a>
-            <a href="about.html">The Story</a>
-            <a href="booking.html" class="cta-gold">Commission Me</a>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="brand">WASIKE<span>.</span></a>
+            <div class="nav-links">
+                <a href="portfolio.html">Portfolio</a>
+                <a href="about.html">Studio</a>
+                <a href="booking.html" class="contact-trigger">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <section class="hero-split">
-        <div class="hero-video-aside">
-            <video autoplay muted loop playsinline>
-                <source src="assets/videos/hero-video.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-text-center">
-            <h1 class="reveal-text">Afro<br>Futurism</h1>
-            <p class="subtitle">Visual Storytelling through the Kenyan Lens</p>
-            <div class="scroll-indicator"></div>
+    <section class="fullscreen-hero">
+        <video autoplay muted loop playsinline class="hero-media">
+            <source src="assets/videos/hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-caption">
+            <span class="location">Nairobi, Kenya</span>
+            <h1>Capturing the <br><i>Unseen</i></h1>
         </div>
     </section>
 
-    <section class="genre-grid">
-        <div class="genre-box portraits" onclick="location.href='portfolio.html'">
-            <div class="genre-overlay"><h3>Portraits</h3></div>
+    <section class="work-showcase">
+        <div class="work-item" data-category="Commercial">
+            <img src="assets/images/sample1.jpg" alt="Commercial">
+            <div class="item-meta"><h3>Brand Identity</h3></div>
         </div>
-        <div class="genre-box cinematic" onclick="location.href='portfolio.html'">
-            <div class="genre-overlay"><h3>Cinematic</h3></div>
+        <div class="work-item" data-category="Portrait">
+            <img src="assets/images/sample2.jpg" alt="Portrait">
+            <div class="item-meta"><h3>Human Essence</h3></div>
         </div>
-        <div class="genre-box events" onclick="location.href='portfolio.html'">
-            <div class="genre-overlay"><h3>Events</h3></div>
-        </div>
-    </section>
-
-    <section class="social-section">
-        <div class="section-label"><span>Social Feed</span></div>
-        <div class="social-container">
-            <ul class="juicer-feed" data-feed-id="wasikephotography" data-per="8" data-columns="4"></ul>
-            <script type="text/javascript" src="https://www.juicer.io/embed/wasikephotography/embed-code.js" async defer></script>
+        <div class="work-item" data-category="Urban">
+            <img src="assets/images/sample3.jpg" alt="Urban">
+            <div class="item-meta"><h3>City Soul</h3></div>
         </div>
     </section>
 
-    <footer class="luxury-footer">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Nairobi, Kenya</h4>
-                <p>Available for Worldwide Commission</p>
-            </div>
-            <div class="footer-col">
-                <a href="https://instagram.com/wasikephotography">Instagram</a>
-                <a href="https://tiktok.com/@wasikephotography">TikTok</a>
-            </div>
+    <section class="social-stream">
+        <div class="stream-header">
+            <h2>@wasikephotography</h2>
+        </div>
+        <div class="juicer-wrapper">
+             <ul class="juicer-feed" data-feed-id="wasikephotography" data-per="4" data-columns="4"></ul>
+             <script type="text/javascript" src="https://www.juicer.io/embed/wasikephotography/embed-code.js" async defer></script>
         </div>
     </section>
 
