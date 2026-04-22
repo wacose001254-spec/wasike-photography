@@ -1,8 +1,8 @@
-// Change Nav background on scroll
+// Navbar Transparency
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('.main-nav');
     if (window.scrollY > 100) {
-        nav.style.backgroundColor = 'rgba(0,0,0,0.9)';
+        nav.style.backgroundColor = 'rgba(0,0,0,0.95)';
         nav.style.padding = '20px 50px';
     } else {
         nav.style.backgroundColor = 'transparent';
@@ -10,18 +10,19 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Smooth Fade-in for Showcase
-const items = document.querySelectorAll('.work-item');
-const activeOnScroll = new IntersectionObserver((entries) => {
+// Fade-in animations for a premium feel
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
         }
     });
-}, { threshold: 0.2 });
+}, { threshold: 0.1 });
 
-items.forEach(item => {
-    item.style.opacity = "0";
-    item.style.transition = "opacity 1s ease-out";
-    activeOnScroll.observe(item);
+document.querySelectorAll('.work-item, .stream-header').forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "all 1s ease-out";
+    observer.observe(el);
 });
