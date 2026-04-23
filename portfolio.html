@@ -3,34 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Wasike Photography</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <title>Travel | Wasike Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="light-theme">
+<body class="travel-page">
 
-    <nav class="mutua-nav sticky-dark">
-        <div class="nav-content">
-            <a href="index.html" class="logo dark-text">WASIKE<span>.</span></a>
-            <div class="links dark-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="booking.html">Contact</a>
+    <nav class="mutua-navbar sticky-light">
+        <div class="nav-wrapper">
+            <div class="nav-left">
+                <a href="index.html" class="nav-brand dark">MUTUA WASIKE</a>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="portfolio.html" class="active">TRAVEL</a></li>
+                    <li><a href="portfolio.html">ARCH</a></li>
+                    <li><a href="portfolio.html">CONCEPTUAL</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a href="booking.html" class="shop-link">SOKO (SHOP)</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="booking.html" class="contact-trigger dark">CONTACT</a>
             </div>
         </div>
     </nav>
 
-    <header class="portfolio-header">
-        <span class="sub-label">The Archive</span>
-        <h1>Selected <i>Works</i></h1>
+    <header class="travel-intro">
+        <div class="intro-container">
+            <span class="label">Journey</span>
+            <h1>Africa & <i>Beyond</i></h1>
+            <p class="intro-text">
+                Travel has rewired how I think about places and people. This is a photo journey through 
+                African cities and the raw landscapes that define our identity. 
+                From the red dust of the North to the blue horizons of the Coast.
+            </p>
+        </div>
     </header>
 
-    <section class="gallery-immersive">
-        <div class="juicer-container">
-            <ul class="juicer-feed" data-feed-id="wasikephotography" data-per="15" data-columns="3"></ul>
-            <script type="text/javascript" src="https://www.juicer.io/embed/wasikephotography/embed-code.js" async defer></script>
+    <section class="travel-gallery">
+        
+        <div class="gallery-item wide">
+            <img src="assets/images/travel-wide-1.jpg" alt="Panoramic Kenya">
+            <div class="location-caption">Lake Natron, Tanzania</div>
         </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item tall">
+                <img src="assets/images/travel-tall-1.jpg" alt="Street Portrait">
+                <div class="location-caption">Nairobi Streets</div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/travel-square-1.jpg" alt="Landscape">
+                <div class="location-caption">Laikipia Plateau</div>
+            </div>
+            <div class="gallery-item">
+                <img src="assets/images/travel-square-2.jpg" alt="Architecture">
+                <div class="location-caption">Lamu Old Town</div>
+            </div>
+            <div class="gallery-item tall">
+                <img src="assets/images/travel-tall-2.jpg" alt="Nature">
+                <div class="location-caption">Amboseli Horizons</div>
+            </div>
+        </div>
+
+        <div class="gallery-item wide">
+            <img src="assets/images/travel-wide-2.jpg" alt="Coastal View">
+            <div class="location-caption">Malindi Coastline</div>
+        </div>
+
     </section>
+
+    <footer class="mutua-footer">
+        <p>Built for the Wasike Empire</p>
+    </footer>
 
     <script src="js/script.js"></script>
 </body>

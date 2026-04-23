@@ -1,18 +1,28 @@
-window.addEventListener('scroll', () => {
+// Function to handle Navbar changes on scroll
+function handleNavbar() {
     const nav = document.querySelector('.mutua-navbar');
-    const links = document.querySelectorAll('.nav-menu a, .nav-brand, .contact-trigger');
     
-    if (window.scrollY > 100) {
-        nav.style.background = 'rgba(255, 255, 255, 0.98)';
-        nav.style.padding = '20px 60px';
-        nav.style.borderBottom = '1px solid #eee';
-        links.forEach(link => {
-            if(!link.classList.contains('shop-link')) link.style.color = 'black';
-        });
+    if (window.scrollY > 50) {
+        nav.classList.add('nav-scrolled');
     } else {
-        nav.style.background = 'transparent';
-        nav.style.padding = '30px 60px';
-        nav.style.borderBottom = 'none';
-        links.forEach(link => link.style.color = 'white');
+        nav.classList.remove('nav-scrolled');
+    }
+}
+
+// Listen for scroll events
+window.addEventListener('scroll', handleNavbar);
+
+// Initial check on load (in case page is refreshed while scrolled)
+document.addEventListener('DOMContentLoaded', () => {
+    handleNavbar();
+    
+    // Add a simple fade-in for the Hero branding
+    const heroText = document.querySelector('.hero-locations');
+    if(heroText) {
+        heroText.style.opacity = "0";
+        setTimeout(() => {
+            heroText.style.transition = "opacity 2s ease";
+            heroText.style.opacity = "0.7";
+        }, 500);
     }
 });
