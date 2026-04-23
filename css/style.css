@@ -1,67 +1,47 @@
-/* Story Container & Blocks */
-.story-container {
-    padding: 150px 0;
-    background: #ffffff;
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --accent: #d4af37;
 }
 
-.story-block {
-    display: flex;
-    align-items: center;
-    margin-bottom: 200px; /* Huge spacing like Mutua */
-    padding: 0 8%;
-    gap: 100px;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); }
 
-.story-block.reverse {
-    flex-direction: row-reverse;
+/* The Matheka Navbar */
+.mutua-navbar {
+    position: fixed; top: 0; width: 100%; z-index: 2000;
+    padding: 30px 60px; transition: 0.5s ease-in-out;
 }
+.nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
 
-.story-image {
-    flex: 2;
-    overflow: hidden;
-    background: #f0f0f0; /* Placeholder color while loading */
-}
+.nav-brand { color: white; text-decoration: none; font-weight: 600; letter-spacing: 2px; font-size: 0.9rem; }
 
-.story-image img {
-    width: 100%;
-    height: 85vh;
-    object-fit: cover;
-    display: block;
-    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+.nav-menu { list-style: none; display: flex; gap: 30px; }
+.nav-menu a { 
+    text-decoration: none; color: white; font-size: 0.65rem; 
+    letter-spacing: 3px; font-weight: 400; transition: 0.3s;
 }
+.shop-link { color: var(--accent) !important; font-weight: 600 !important; }
+.contact-trigger { color: white; text-decoration: none; font-size: 0.65rem; letter-spacing: 3px; }
 
-.story-image:hover img {
-    transform: scale(1.03);
-}
+/* Home Hero */
+.home-hero { height: 100vh; width: 100%; position: relative; display: flex; align-items: center; justify-content: center; }
+.hero-video-full { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.6); }
+.hero-branding { text-align: center; color: white; }
+.hero-branding h1 { font-size: 4rem; font-weight: 200; text-transform: uppercase; letter-spacing: 15px; }
+.hero-branding i { font-family: 'Playfair Display', serif; text-transform: lowercase; }
+.hero-locations { margin-top: 20px; font-size: 0.7rem; letter-spacing: 5px; opacity: 0.8; }
 
-.story-info {
-    flex: 1;
-}
+/* The Signature Intro Block */
+.intro-block { padding: 150px 10%; text-align: center; background: white; }
+.greeting { font-size: 2.5rem; font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: 20px; }
+.mission { font-size: 1.8rem; font-weight: 300; line-height: 1.4; color: #333; margin-bottom: 30px; }
+.base-location { font-size: 0.8rem; letter-spacing: 3px; color: #999; text-transform: uppercase; }
 
-.story-info h2 {
-    font-size: 0.8rem;
-    letter-spacing: 12px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.story-info p {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.8rem;
-    color: #444;
-}
-
-/* Responsive Fixes */
-@media (max-width: 900px) {
-    .story-block, .story-block.reverse {
-        flex-direction: column;
-        padding: 0 20px;
-        margin-bottom: 100px;
-        gap: 30px;
-    }
-    .story-image img {
-        height: 50vh;
-    }
-}
+/* Showcase */
+.home-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: white; padding: 10px; }
+.showcase-item { position: relative; height: 90vh; overflow: hidden; cursor: pointer; }
+.showcase-item img { width: 100%; height: 100%; object-fit: cover; transition: 1.5s cubic-bezier(0.19, 1, 0.22, 1); }
+.showcase-item:hover img { transform: scale(1.05); }
+.showcase-item .label { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 0.8rem; letter-spacing: 10px; opacity: 0; transition: 0.5s; }
+.showcase-item:hover .label { opacity: 1; }
