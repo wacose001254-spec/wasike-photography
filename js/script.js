@@ -1,28 +1,21 @@
-// Function to handle Navbar changes on scroll
-function handleNavbar() {
+// Function to handle Navbar logic based on page type
+function initNavigation() {
     const nav = document.querySelector('.mutua-navbar');
-    
-    if (window.scrollY > 50) {
-        nav.classList.add('nav-scrolled');
-    } else {
-        nav.classList.remove('nav-scrolled');
-    }
+    const isHomePage = document.querySelector('.home-hero');
+
+    const handleScroll = () => {
+        if (isHomePage) {
+            // Only toggle on home page
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Run once on load
 }
 
-// Listen for scroll events
-window.addEventListener('scroll', handleNavbar);
-
-// Initial check on load (in case page is refreshed while scrolled)
-document.addEventListener('DOMContentLoaded', () => {
-    handleNavbar();
-    
-    // Add a simple fade-in for the Hero branding
-    const heroText = document.querySelector('.hero-locations');
-    if(heroText) {
-        heroText.style.opacity = "0";
-        setTimeout(() => {
-            heroText.style.transition = "opacity 2s ease";
-            heroText.style.opacity = "0.7";
-        }, 500);
-    }
-});
+document.addEventListener('DOMContentLoaded', initNavigation);
